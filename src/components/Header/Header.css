@@ -1,0 +1,17 @@
+.Header_root {
+  color: white;
+  background-color: #2296f3;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  padding-right: 100px;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+.Header {
+  margin-left: 1.8rem;
+}

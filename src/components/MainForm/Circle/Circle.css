@@ -1,0 +1,75 @@
+/* ceo SVG element */
+.CheckmarkSvg {
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #2296f3;
+  stroke-miterlimit: 10;
+  box-shadow: inset 0px 0px 0px white;
+}
+
+/* krug */
+.CheckmarkSvg__circle {
+  transform-origin: center;
+  stroke-miterlimit: 10;
+  animation: strokeCirc 1.8s linear both;
+}
+
+/* strik */
+.CheckmarkSvg__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 38;
+  stroke-dashoffset: 38;
+  animation: stroke 0.8s cubic-bezier(0.65, 0, 0.45, 1) 1.4s forwards,
+    scale 0.8s cubic-bezier(0.65, 0, 0.45, 1) 1.9s both;
+}
+
+/* tekst */
+.myText {
+  animation: appear 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards;
+}
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes strokeCirc {
+  0% {
+    stroke-dashoffset: 80;
+    transform: rotate(0deg);
+  }
+  50% {
+    stroke-dashoffset: 26;
+    transform: rotate(720deg);
+  }
+  100% {
+    stroke-dashoffset: 106.81415022205297;
+    transform: rotate(1350deg);
+  }
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  50% {
+    transform: scale3d(1.1, 1.2, 1);
+  }
+}
+
+@keyframes fill {
+  100% {
+    box-shadow: inset 0px 0px 0px 80px white;
+  }
+}
+
+@keyframes appear {
+  100% {
+    fill: white;
+    stroke: white;
+  }
+}
