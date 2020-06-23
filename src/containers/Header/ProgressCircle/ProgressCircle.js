@@ -19,7 +19,7 @@ const ProgressCircle = (props) => {
       return;
     }
     const increment = end > start ? 1 : -1;
-    const duration = 500;
+    const duration = 1600;
     const stepTime = Math.abs(Math.floor(duration / range));
     const counter = () => {
       current += increment;
