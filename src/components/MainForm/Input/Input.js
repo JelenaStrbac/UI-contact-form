@@ -46,6 +46,7 @@ const input = (props) => {
                   onChange={props.changed}
                   key={el.label}
                   autoComplete="off"
+                  value={el.label}
                 />
                 <span className="Checkmark"></span>
               </label>
