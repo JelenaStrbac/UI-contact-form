@@ -2,6 +2,7 @@ This project is based on [Leo Zakour](https://dribbble.com/leozakour) design of 
 
 ## Contact Form
 
+* Written in React (incl. React hooks)
 * Includes animations made on SVG elements (e.g. progress circle with percentages)
 * Animations are implemented using pure CSS (no external libraries)
 * On submit data is stored in Firebase
