@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import axios from "../../axios";
 
 import "./MainForm.css";
 import { checkValidity } from "../../components/MainForm/Input/CheckValidity/CheckValidity";
 import Input from "../../components/MainForm/Input/Input";
 import Circle from "../../components/MainForm/Circle/Circle";
+import Modal from "../../components/Modal/Modal";
 
 const MainForm = (props) => {
-  const [orderForm, setOrderForm] = useState({
+  const [orderForm, setForm] = useState({
     firstName: {
       elementType: "input",
       elementConfig: {
@@ -76,9 +78,55 @@ const MainForm = (props) => {
   });
 
   const [formIsValid, setFormIsValid] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
 
-  const orderHandler = (e) => {
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    clearForm();
+  };
+
+  const formHandler = (e) => {
     e.preventDefault();
+
+    const contact = {
+      firstName: orderForm.firstName.value,
+      lastName: orderForm.lastName.value,
+      email: orderForm.email.value,
+      time: orderForm.time.value,
+    };
+
+    axios
+      .post("/contacts.json", contact)
+      .then((res) => {
+        setModalMessage("Thank you! Your data was sucessfully submited.");
+        openModal();
+      })
+      .catch((err) => {
+        console.log(err);
+        setModalMessage("Ooops, something went wrong. Please try again.");
+      });
+  };
+
+  const clearForm = () => {
+    const clearedForm = {
+      ...orderForm,
+    };
+
+    for (let key in clearedForm) {
+      clearedForm[key].value = "";
+      clearedForm[key].valid = false;
+      clearedForm[key].touched = false;
+      document
+        .querySelectorAll("input[type=checkbox]")
+        .forEach((el) => (el.checked = false));
+    }
+    setForm(clearedForm);
+    settingValidity(clearedForm);
   };
 
   const inputChangedHandler = (e, inputIdentifier) => {
@@ -101,7 +149,7 @@ const MainForm = (props) => {
     for (let inputIdentifier in updatedOrderForm) {
       formIsValid = updatedOrderForm[inputIdentifier].valid && formIsValid;
     }
-    setOrderForm(updatedOrderForm);
+    setForm(updatedOrderForm);
     setFormIsValid(formIsValid);
     settingValidity(updatedOrderForm);
   };
@@ -132,8 +180,13 @@ const MainForm = (props) => {
     });
   }
 
+  const buttonClass = ["Button"];
+  if (!formIsValid) {
+    buttonClass.push("Disabled");
+  }
+
   let form = (
-    <form autoComplete="off" onSubmit={orderHandler}>
+    <form className="Form" autoComplete="off" onSubmit={formHandler}>
       {formElementsArray.map((el, idx) => {
         return (
           <div key={idx + 1} className="FormCircleInput">
@@ -156,20 +209,16 @@ const MainForm = (props) => {
           </div>
         );
       })}
+      <button className={buttonClass.join(" ")}>SUBMIT</button>
+      <Modal
+        show={showModal}
+        clicked={closeModal}
+        modalMessage={modalMessage}
+      />
     </form>
   );
 
-  const buttonClass = ["Button"];
-  if (!formIsValid) {
-    buttonClass.push("Disabled");
-  }
-
-  return (
-    <div className="MainForm">
-      {form}
-      <button className={buttonClass.join(" ")}>SUBMIT</button>
-    </div>
-  );
+  return <div className="MainForm">{form}</div>;
 };
 
 export default MainForm;

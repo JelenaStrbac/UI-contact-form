@@ -4,7 +4,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  align-content: center;
+  justify-content: center;
+  justify-items: center;
   width: 100%;
+}
+
+.Form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .FormCircleInput {
@@ -51,4 +60,14 @@ form {
 .Disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+@media only screen and (max-width: 480px) {
+  .MainForm {
+    justify-content: space-evenly;
+  }
+
+  .FormCircleInput {
+    margin-bottom: 2.5rem;
+  }
 }
