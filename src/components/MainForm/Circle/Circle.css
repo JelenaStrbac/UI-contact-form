@@ -12,7 +12,7 @@
 .CheckmarkSvg__circle {
   transform-origin: center;
   stroke-miterlimit: 10;
-  animation: strokeCirc 1.8s linear both;
+  animation: strokeCirc 1.4s linear both;
 }
 
 /* strik */
@@ -21,7 +21,7 @@
   stroke-dasharray: 38;
   stroke-dashoffset: 38;
   animation: stroke 0.8s cubic-bezier(0.65, 0, 0.45, 1) 1.4s forwards,
-    scale 0.8s cubic-bezier(0.65, 0, 0.45, 1) 1.9s both;
+    scale 0.7s cubic-bezier(0.65, 0, 0.45, 1) 1.9s both;
 }
 
 /* tekst */

@@ -61,3 +61,13 @@ form {
   opacity: 0.6;
   cursor: not-allowed;
 }
+
+@media only screen and (max-width: 480px) {
+  .MainForm {
+    justify-content: space-evenly;
+  }
+
+  .FormCircleInput {
+    margin-bottom: 2.5rem;
+  }
+}
