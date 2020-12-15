@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/JelenaStrbac/UI-contact-form/static/css/main.da481be9.chunk.css",
+    "main.js": "/JelenaStrbac/UI-contact-form/static/js/main.29e633ec.chunk.js",
+    "main.js.map": "/JelenaStrbac/UI-contact-form/static/js/main.29e633ec.chunk.js.map",
+    "runtime-main.js": "/JelenaStrbac/UI-contact-form/static/js/runtime-main.4ee62a1d.js",
+    "runtime-main.js.map": "/JelenaStrbac/UI-contact-form/static/js/runtime-main.4ee62a1d.js.map",
+    "static/js/2.1216b4f5.chunk.js": "/JelenaStrbac/UI-contact-form/static/js/2.1216b4f5.chunk.js",
+    "static/js/2.1216b4f5.chunk.js.map": "/JelenaStrbac/UI-contact-form/static/js/2.1216b4f5.chunk.js.map",
+    "index.html": "/JelenaStrbac/UI-contact-form/index.html",
+    "precache-manifest.0750fea3e4bb1459bccef9a213899aca.js": "/JelenaStrbac/UI-contact-form/precache-manifest.0750fea3e4bb1459bccef9a213899aca.js",
+    "service-worker.js": "/JelenaStrbac/UI-contact-form/service-worker.js",
+    "static/css/main.da481be9.chunk.css.map": "/JelenaStrbac/UI-contact-form/static/css/main.da481be9.chunk.css.map",
+    "static/js/2.1216b4f5.chunk.js.LICENSE.txt": "/JelenaStrbac/UI-contact-form/static/js/2.1216b4f5.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4ee62a1d.js",
+    "static/js/2.1216b4f5.chunk.js",
+    "static/css/main.da481be9.chunk.css",
+    "static/js/main.29e633ec.chunk.js"
+  ]
+}
